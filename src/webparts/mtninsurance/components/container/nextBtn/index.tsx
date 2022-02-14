@@ -1,14 +1,15 @@
 import * as React from 'react'
-
-const nextBtn = ({handler}) => {
+import { GrFormNext } from "react-icons/gr";
+import styles from './nextBtn.module.scss'
+const NextBtn = ({handler}) => {
   return (
     <div>
         <button 
          type='button' 
-         onClick={handler} >Back
+         onClick={handler} > Next <span className={styles.icons}> <GrFormNext/> </span>
          </button>
     </div>
   )
 }
 
-export default nextBtn
+export default NextBtn

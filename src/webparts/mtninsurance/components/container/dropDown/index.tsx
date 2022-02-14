@@ -3,11 +3,9 @@ import * as React from 'react';
 
 const Select = ({ onChange, value, children, title }) => {
     return <div className="mtn__InputContainer mtn__child">
-        <label>{title}</label>
+        <label>select</label>
         <select
-            onChange={onChange}
-            value={value}
-        >{children}</select>
+        >juls</select>
     </div>;
 };
 

@@ -1,14 +1,16 @@
 import * as React from 'react'
-
-const prevBtn = ({handler}) => {
+import { GrFormNext } from "react-icons/gr";
+import styles from "./prevBtn.module.scss"
+import { GrFormPrevious } from "react-icons/gr";
+const PrevBtn = ({handler}) => {
   return (
     <div>
         <button 
          type='button' 
-         onClick={handler} > Next
+         onClick={handler} ><span className={styles.icons}> <GrFormPrevious className={styles.iconColor}/></span> Previous
          </button>
     </div>
   )
 }
 
-export default prevBtn
+export default PrevBtn

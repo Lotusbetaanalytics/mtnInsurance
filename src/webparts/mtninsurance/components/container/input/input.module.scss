@@ -11,12 +11,12 @@
 }
 input {
   width: 90%;
-  height: 3.5rem;
+  height: 20px;
   outline: none;
   border: none;
   padding: 0.5rem 1.5rem;
-  border-radius: 10px;
-  background: rgba(18, 4, 68, 0.22);
+  border-radius: 15px;
+  background: rgb(255, 255, 255);
 }
 
 input:read-only {

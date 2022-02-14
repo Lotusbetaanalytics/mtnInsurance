@@ -1,3 +1,6 @@
 
 export { default as Input } from "./input";
 export { default as Select } from "./dropDown";
+export {default as SideBar } from "./sidebar"
+export {default as NextBtn } from "./nextBtn"
+export {default as PrevBtn } from "./prevBtn"

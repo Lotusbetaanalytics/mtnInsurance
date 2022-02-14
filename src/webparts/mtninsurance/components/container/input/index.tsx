@@ -1,12 +1,14 @@
 import * as React from 'react';
 import styles from './input.module.scss'
 
-const Input = () => {
+const Input = ({title,type,placeholder,onChange,value}) => {
     return <div className={styles.mtn__InputContainer}>
-        <label>Input</label>
+        <label>{title}</label>
         <input
-            type="text"
-            placeholder="this is it"
+            type={type}
+            placeholder={placeholder}
+            onChange={onChange}
+            value={value}
         />
     </div>;
 };
