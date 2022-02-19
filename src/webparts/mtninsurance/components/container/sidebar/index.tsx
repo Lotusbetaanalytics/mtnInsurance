@@ -9,9 +9,8 @@ const SideBar = () => {
              <img src={require('../../assets/logo.png')} alt="" />
         </div>
         <div className={styles.title}>Y'ello</div>
-        this is the shit
     </div>
-  )
+  );
 }
 
 export default SideBar

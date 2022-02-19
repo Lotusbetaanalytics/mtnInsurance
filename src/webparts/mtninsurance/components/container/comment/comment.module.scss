@@ -1,16 +1,21 @@
-.mtn__InputContainer {
+.mtn__CommentContainer {
   display: flex;
   flex-direction: column;
   padding: 0.5rem 0.5rem;
+  label {
+    font-size: 13px;
+  }
 }
-.mtn__InputContainer input {
+
+.mtn__CommentContainer textarea {
   width: 80%;
-  height: 22px;
+  height: 100px;
   outline: none;
   border: none;
   padding: 0.5rem 1.5rem;
   border-radius: 20px;
   border: 2px solid rgba(0, 0, 0, 0.26);
+  background: rgb(255, 255, 255);
 }
 
 input:read-only {

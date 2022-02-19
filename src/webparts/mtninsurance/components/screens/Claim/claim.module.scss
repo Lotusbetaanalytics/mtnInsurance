@@ -1,0 +1,55 @@
+.container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+.right {
+  width: 85%;
+  background-color: white;
+  padding: 2% 8%;
+}
+.title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  font-family: monospace;
+}
+
+.instruction {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.containerForm {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-gap: 3%;
+}
+.formContainer {
+  display: grid;
+}
+.btnContainer {
+  position: absolute;
+  margin-top: 10px;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+  padding: 0.5rem 10% 0.5rem 0;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  width: 89%;
+  background-color: rgb(0, 255, 64);
+}
+.checkContainer {
+  display: flex;
+  padding-left: 2rem;
+  padding-top: 1rem;
+}
+.checkContainer input {
+  display: flex;
+}
+.checkboxTitle {
+  display: flex;
+}
