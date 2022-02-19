@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Noto+Sans&family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap");
+
 .container {
   width: 100%;
   display: flex;
-  min-height: 100vh;
+  min-height: 110vh;
 }
 .right {
   width: 85%;
@@ -13,9 +15,12 @@
   font-size: 24px;
   margin-bottom: 30px;
   margin-top: 15px;
-  font-family: monospace;
+  font-family: "Gothic A1", sans-serif;
 }
-
+.marginBtm {
+  margin-bottom: 20px;
+  margin-left: auto;
+}
 .instruction {
   font-size: 12px;
   margin-bottom: 10px;
@@ -42,10 +47,26 @@
   width: 89%;
   background-color: rgb(0, 255, 64);
 }
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  height: 300px;
+}
 .checkContainer {
   display: flex;
-  padding-left: 2rem;
   padding-top: 1rem;
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+.checkContainer input[type="radio"] {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+.checkContainer input[type="checkbox"] {
+  margin-left: 40px;
+  margin-top: 5px;
 }
 .checkContainer input {
   display: flex;

@@ -31,15 +31,15 @@ const nextHandler = () => {
         <SideBar/>
         <div className={styles.right}>
             <div className={styles.checkContainer}>
-                <input type="checkbox" id="documentCompleted" name="documentCompleted" value="yes" />Yes
-                <input type="checkbox" id="documentCompleted" name="documentCompleted" value="No" />No
+                <input type="radio" id="documentCompleted" name="documentCompleted" value="yes" />Claim Entry
+                <input type="radio" id="documentCompleted" name="documentCompleted" value="No" />Bulk Entry
             </div>
             <Slider size={0} />
             <div className={styles.containerForm}>
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="initiator23"
+                 placeholder="initiator"
                  onChange={(e) => setInitiator(e.target.value)}
                  value={initiator} />
               </div>
@@ -95,7 +95,7 @@ const nextHandler = () => {
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="Incident Type"
+                 placeholder="Policy Name"
                  onChange={(e) => setPolicyName(e.target.value)}
                  value={policyName} />
               </div>

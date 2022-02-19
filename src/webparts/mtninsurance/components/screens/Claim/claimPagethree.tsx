@@ -71,14 +71,14 @@ const [region,setRegion]= useState("")
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="Amount Received"
+                 placeholder="Pictures"
                  onChange={(e) => setPictures(e.target.value)}
                  value={pictures} />
               </div>
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="Amount Outstanding"
+                 placeholder="No of working Days"
                  onChange={(e) => setNoOfworkingsDays(e.target.value)}
                  value={noOfworkingsDays} />
               </div>
@@ -99,21 +99,21 @@ const [region,setRegion]= useState("")
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="Date of of settlement Offer Receipt"
+                 placeholder="Fire Service Report"
                  onChange={(e) => setFireServiceReport(e.target.value)}
                  value={fireServiceReport} />
               </div>
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="Date of of settlement Offer Receipt"
+                 placeholder="Court Affidavit"
                  onChange={(e) => setCourtAffidavit(e.target.value)}
                  value={courtAffidavit} />
               </div>
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="Date of of settlement Offer Receipt"
+                 placeholder="Region"
                  onChange={(e) => setRegion(e.target.value)}
                  value={region} />
               </div>

@@ -1,11 +1,11 @@
 import *as React from 'react'
-import { NextBtn, PrevBtn, SideBar, Slider } from '../../container'
+import { CustomBtn, NextBtn, PrevBtn, SideBar, Slider } from '../../container'
 import styles from "../Claim/claim.module.scss"
 import { useHistory } from 'react-router-dom'
 
 const NewClaimBulkThree = () => {
   const history = useHistory;
-  
+
   const cancelHandler = () => {
     history.push("/newclaimbulktwo")
 }
@@ -21,9 +21,12 @@ const nextHandler = () => {
         <SideBar/>
         <div className={styles.right}>
             <div className={styles.checkContainer}>
-                <input type="checkbox" id="documentCompleted" name="documentCompleted" value="yes" />Yes
-                <input type="checkbox" id="documentCompleted" name="documentCompleted" value="No" />No
-                <PrevBtn buttonName="Download now" handler={downloadHandler} />
+                <input type="radio" id="documentCompleted" name="documentCompleted" value="claim" />Claim
+                <input type="radio" id="documentCompleted" name="documentCompleted" value="bulk" />Bulk
+                <div className={styles.marginBtm}><CustomBtn buttonName="Download SpreadSheet" handler={downloadHandler}  /></div> 
+            </div>
+            <div className={styles.imageContainer}>
+              gffyufyyuf
             </div>
             <div className={styles.btnContainer}>
                 <PrevBtn buttonName="Previous" handler={cancelHandler}/>

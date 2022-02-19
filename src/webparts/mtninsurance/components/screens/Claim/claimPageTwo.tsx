@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Comment, Input, NextBtn, PrevBtn, SideBar, Slider } from '../../container'
 import styles from "./claim.module.scss"
 import { useHistory } from 'react-router-dom'
+
 const ClaimPageTwo = () => {
 const history = useHistory();
 const [descriptionOfLost,setDescriptionOfLost] = useState("")
