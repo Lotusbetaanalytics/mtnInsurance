@@ -32,7 +32,7 @@ const nextHandler = () => {
               <div className={styles.formContainer}>
                 <Input
                  type= "text"
-                 placeholder="initiator23"
+                 placeholder="initiator"
                  onChange={(e) => setInitiator(e.target.value)}
                  value={initiator} />
               </div>
