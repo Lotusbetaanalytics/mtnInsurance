@@ -11,7 +11,21 @@
       ]
     }
   },
-  "externals": {},
+  "externals": {
+    "jquery": {
+      "path": "node_modules/jquery/dist/jquery.min.js",
+
+      "globalName": "jQuery"
+    },
+
+    "bootstrap": {
+      "path": "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+
+      "globalName": "bootstrap",
+
+      "globalDependencies": ["jquery"]
+    }
+  },
   "localizedResources": {
     "MtninsuranceWebPartStrings": "lib/webparts/mtninsurance/loc/{locale}.js"
   }
