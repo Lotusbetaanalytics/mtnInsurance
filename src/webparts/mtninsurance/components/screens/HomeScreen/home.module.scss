@@ -1,0 +1,59 @@
+.mtn__homeScreen{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: url(../../assets/bg1.jpg);;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: slideBg 20s linear infinite 8s;
+    animation-timing-function: ease-in-out;
+    background-repeat: no-repeat;
+ padding: 10rem;
+
+
+}
+
+@keyframes slideBg {
+    0% {
+        background: url(../../assets/bg1.jpg);
+        background-size: cover;
+    }
+
+    25% {
+        background: url(../../assets/bg2.jpg);
+        background-size: cover;
+    }
+
+    50% {
+        background: url(../../assets/bg3.jpg);
+        background-size: cover;
+    }
+
+    75% {
+        background: url(../../assets/bg1.jpg);
+        background-size: cover;
+    }
+
+    100% {
+        background: url(../../assets/bg3.jpg);
+        background-size: cover;
+    }
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+ p{font-size: 18px; text-shadow: 0px 0px 1px #a0a3bb;}
+ h1{font-size: 3rem;font-weight: bold;line-height: 4rem; text-shadow: 0px 0px 2px #a0a3bb;}
+ img{width: 100px;height: 100px;object-fit: contain;margin-bottom: 3rem;}
+}
+
+
+.btnContainer{
+    display: flex;
+    align-self: center;justify-content: center;align-items: center;
+}

@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+
+@font-face {
+  font-family: "MTNBrighterSans-Medium";
+  src: url("https://mtnonline.com/smartanalytics/assets/assets/fonts/MTNBrighterSans-Medium.eot");
+  src: url("https://mtnonline.com/smartanalytics/assets/assets/fonts/MTNBrighterSans-Medium.woff") format("woff");
+  }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  // font-family: 'Gothic A1', sans-serif;
+  font-family: MTNBrighterSans-Medium;
+}
+
+.mtn__contents {
+  width: 100%;
+  display: flex;
+  padding: 3rem 10rem;
+  background: rgba(196, 196, 196, 0.22);
+}
+
+.mtn__formContainer {
+  display: flex;
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  flex-direction: column;
+}
+
+.mtn__btn {
+  width: 100%;
+  height: 3.5rem;
+  outline: none;
+  padding: 1rem 3rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  align-items: center;
+}
+
+.mtn__btnIcons {
+ justify-content: space-around;
+}
+
+.mtn__btn svg{
+font-size: 25px;
+
+}
+
+.mtn__btnSm {
+  height: 3.5rem;
+  outline: none;
+  padding: 1rem 3rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  align-items: center;
+}
+
+.mtn__start{
+  justify-content: flex-start;
+}
+
+.mtn__btnContainer {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5rem 2rem;
+  gap: 2rem;
+}
+
+.mtn__btnContainerStart {
+  display: flex;
+  justify-content: flex-start;
+  // padding: .5rem 2rem;
+  // gap: 2rem;
+}
+
+.mtn__black {
+  background: #000;
+}
+.mtn__yellow{background: rgba(255, 196, 35, 1);color: #000;
+}
+.mtn__blackOutline {
+  border: 1px solid#000;
+  background: white;
+  color: #000;
+}
+
+.mtn__InputFlex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.mtn__child {
+  flex-basis: 50%;
+}
+.mtn__adult {
+  flex-basis: 100%;
+}
+
+.mtn__InputContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  padding: .5rem 2rem;
+
+  label {
+    font-size: 13px;
+    margin-left: .3rem;
+    margin-bottom: .5rem;
+  }
+
+  input {
+    width: 100%;
+    height: 3.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: .5rem 1.5rem;
+    border-radius: 100px;
+    background: white;
+  }
+
+  input:read-only {
+    background: whitesmoke
+  }
+
+  select {
+    width: 100%;
+    height: 3.5rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: .5rem 1.5rem;
+    border-radius: 100px;
+    background: white;
+    padding-right: 3rem;
+  }
+  textarea {
+    width: 100%;
+    height: 7rem;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: .5rem 1.5rem;
+    border-radius: 10px;
+    background: white;
+  }
+  span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    background-clip: content-box;
+    border: 1px solid gainsboro;
+    border-radius: 50%;
+    margin:0 1rem;
+
+
+  }
+  input[type="radio"]:checked {
+    background-color: #FFCC00;
+  }
+  .most__RadioContainer{
+    display: flex;
+    // justify-content: space-between;
+  }
+}
+.radioFlex{flex-direction: row;
+  justify-content: left;
+  align-items: center;}
+
+.appContainer{
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  background: white;
+  justify-content: space-around;
+}
+
+.contentsRight {
+  flex-grow: 1;
+  padding: 0;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  flex: 0.95;
+  padding: .5rem 1rem;
+}
+.cardContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,38 @@
+.mtn__cards {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.02);
+    border-radius: 5px;
+    padding: 2rem 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid gainsboro;
+}
+
+.mtn__url {
+    flex-basis: 23%;
+    text-decoration: none;
+}
+
+.mtn__icons {
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex: 0.1;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    align-items: center;
+}
+
+
+.mtn__icons svg {
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+.mtn__text {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+}

@@ -1,0 +1,22 @@
+.uploadContainer{
+    width: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.uploadCircle{
+width: 250px;
+height: 250px;
+border-radius: 50%;
+background: rgba(196, 196, 196, 0.31);
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 auto;
+}
+.uploadCircle svg{
+    font-size: 8rem;
+    color: rgba(68, 68, 68, 0.69);
+}

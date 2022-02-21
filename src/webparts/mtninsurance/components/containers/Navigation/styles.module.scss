@@ -1,0 +1,112 @@
+.mtn__navigation {
+    display: flex;
+    height: 100vh;
+    flex: 0.15;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    padding: 2rem 0;
+    background: rgba(255, 196, 35, 1);
+
+}
+
+.mtn__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // overflow: hidden;
+}
+
+.mtn__logo img {
+    max-height: 5rem;
+    object-fit: contain;
+    margin-bottom: 2rem;
+}
+.mtn__logo h1{margin-bottom: 2rem; text-align: center;}
+.mtn__links {
+    display: flex;
+    padding: 2rem 0;
+
+}
+
+.mtn__links ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 100%;
+    flex-direction: column;
+}
+
+.mtn__links ul li {
+    display: flex;
+    list-style: none;
+    justify-content: flex-start;
+    height: 3rem;
+    cursor: pointer;
+    padding-left: 1rem;
+}
+
+.mtn__links ul li a {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    text-decoration: none;
+    color: black;
+}
+
+.mtn__links ul li span {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.mtn__links ul li a svg {
+    margin-right: .5rem;
+    margin-top: .1rem;
+}
+
+.mtn__links ul li span svg {
+    margin-right: .5rem;
+    margin-top: .1rem;
+}
+
+.mtn__show {
+    display: flex;
+    background: white;
+    color: rgba(255, 196, 35, 1);
+    padding: .5rem 0;
+}
+
+.mtn__show ul li a {
+    font-size: 13px;
+}
+
+
+.mtn__hide{
+    display: none;
+}
+
+.open{
+background: white;
+}
+
+.close{
+    background: white;
+    }
+
+@media screen and (max-width: 1050px) {
+    .mtn__navigation {
+        flex: 0.3;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .mtn__navigation {
+        flex: 1;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .mtn__navigation {
+        flex: 1;
+    }
+}

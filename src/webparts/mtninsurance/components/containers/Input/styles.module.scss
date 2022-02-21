@@ -1,0 +1,20 @@
+
+.uploadWrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.uploadBtn {
+    border: 1px dotted #BDBDBD;
+    color: gray;
+    background-color: #FAFAFA;
+}
+
+.uploadWrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
