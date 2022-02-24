@@ -1,0 +1,22 @@
+.nextBtn button {
+  background-color: #ffc423;
+  color: rgb(233, 32, 32);
+  display: flex;
+  padding: 10px 20px;
+  border-radius: 18px;
+  border: none;
+  color: white;
+  align-items: center;
+  font-size: 12px;
+}
+.icons {
+  display: flex;
+  margin-top: 2px;
+  align-items: center;
+  margin-left: 15px;
+  font-size: 14px;
+  color: white;
+}
+svg {
+  color: white;
+}

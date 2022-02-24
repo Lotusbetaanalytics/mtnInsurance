@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100&family=Noto+Sans&family=Open+Sans:wght@300&family=Roboto:wght@100&display=swap");
+
+.risk__Container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.risk__right {
+  width: 85%;
+  background-color: white;
+  padding: 2% 8%;
+}
+
+.risk__title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  font-family: "Gothic A1", sans-serif;
+}
+
+.risk__checkContainer {
+  display: flex;
+  padding-top: 1rem;
+  margin-bottom: 20px;
+  padding-left: 18px;
+}
+.risk__checkContainer input[type="radio"] {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+.risk__checkContainer input[type="checkbox"] {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+.risk__checkContainer input {
+  display: flex;
+}
+.checkboxTitle {
+  display: flex;
+}
+
+.marginBtm {
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+.instruction {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.risk__containerForm {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-gap: 3%;
+}
+.risk__formContainer {
+  display: grid;
+}
+
+.risk__formContainer select {
+  width: 88%;
+  height: 3rem;
+  outline: none;
+  margin-left: 15px;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.risk__btnContainer {
+  position: absolute;
+  margin-top: 10px;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+  padding: 1rem 10% 1rem 0;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  width: 89%;
+}
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: black;
+  height: 300px;
+}

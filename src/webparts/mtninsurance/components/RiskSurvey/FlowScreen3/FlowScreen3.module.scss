@@ -1,0 +1,36 @@
+.risk__Container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.risk__right {
+  width: 85%;
+  background-color: white;
+  padding: 2% 8%;
+}
+
+.risk__title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  font-family: "Gothic A1", sans-serif;
+}
+
+.risk__successPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 300px;
+  margin-left: 20%;
+  background-color: whitesmoke;
+  border-radius: 20px;
+}
+
+.risk__successPage img {
+  width: 25%;
+  //   height: 200px;
+  border-radius: 50%;
+}

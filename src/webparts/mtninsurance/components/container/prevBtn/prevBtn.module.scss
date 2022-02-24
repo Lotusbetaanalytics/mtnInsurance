@@ -1,0 +1,21 @@
+button {
+  background-color: #000000;
+  display: flex;
+  padding: 10px 16px;
+  border-radius: 18px;
+  border: none;
+  align-items: center;
+  font-size: 12px;
+  margin-left: 20px;
+  color: white;
+}
+.icons {
+  display: flex;
+  margin-top: 2px;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 14px;
+}
+.iconColor {
+  color: white;
+}

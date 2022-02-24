@@ -9,20 +9,23 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "@fluentui/react": "^8.56.0",
     "@microsoft/sp-core-library": "1.13.1",
     "@microsoft/sp-lodash-subset": "1.13.1",
     "@microsoft/sp-office-ui-fabric-core": "1.13.1",
     "@microsoft/sp-property-pane": "1.13.1",
     "@microsoft/sp-webpart-base": "1.13.1",
     "@pnp/graph": "^2.9.0",
-    "@pnp/sp": "^2.9.0",
-    "jquery": "^3.6.0",
+    "@pnp/polyfill-ie11": "^2.0.2",
+    "@pnp/sp": "^2.12.0",
     "node-sass": "^7.0.1",
     "office-ui-fabric-react": "7.174.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
     "sp-pnp-js": "^3.0.10",
     "xlsx": "^0.17.4"
   },
@@ -32,6 +35,7 @@
     "@microsoft/sp-module-interfaces": "1.13.1",
     "@microsoft/sp-tslint-rules": "1.13.1",
     "@types/bootstrap": "^4.6.1",
+    "@types/jquery": "^3.5.13",
     "@types/react": "16.9.51",
     "@types/react-bootstrap": "^0.32.29",
     "@types/react-dom": "16.9.8",
@@ -39,6 +43,7 @@
     "ajv": "~5.2.2",
     "bootstrap": "^4.6.1",
     "gulp": "~4.0.2",
+    "jquery": "^3.6.0",
     "react-bootstrap": "^2.1.2"
   }
 }

@@ -1,0 +1,55 @@
+.risk__Container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+}
+
+.risk__right {
+  width: 85%;
+  background-color: white;
+  padding: 2% 8%;
+}
+
+.risk__title {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 30px;
+  margin-top: 15px;
+  font-family: "Gothic A1", sans-serif;
+}
+
+.risk__containerForm {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  grid-gap: 3%;
+}
+
+.risk__formContainer {
+  display: grid;
+}
+
+.risk__formContainer select {
+  width: 88%;
+  height: 3rem;
+  outline: none;
+  margin-left: 15px;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.risk__btnContainer {
+  position: absolute;
+  margin-top: 10px;
+  bottom: 5px;
+  right: 0;
+  left: 0;
+  padding: 0.5rem 10% 0.5rem 0;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  width: 89%;
+  //   background-color: rgb(0, 255, 64);
+}
