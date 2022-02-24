@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./Carousel.module.scss";
 import { escape } from "@microsoft/sp-lodash-subset";
+import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import { getBannerConfiguration } from "../../../../SliderServices";
 import { ICarouselProps } from "../ICarouselProps";
@@ -11,6 +12,13 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 import { Web, IWeb } from "@pnp/sp/presets/all";
+import { NextBtn } from "../container";
+
+const history = useHistory();
+
+const riskHandler = () => {
+  history.push("/risksurvey/flowscreen1");
+};
 
 export interface IReactCarouselWpState {
   bannerCardData: any[];
@@ -58,19 +66,59 @@ export default class ReactCarouselWp extends React.Component<
           <Slider {...settings}>
             <div className={styles.risk__backgroundImage2}>
               <div className={styles.risk__yellowbg}>
-                <p>This is MTN</p>
+                <div className={styles.risk__content}>
+                  <img src={require("../assets/logo.png")} alt="logo" />
+                  <h2>Welcome to</h2>
+                  <br></br>
+                  <span>
+                    The Insurance Risk Management <br />
+                    Portal
+                  </span>
+
+                  <button className={styles.risk__SliderBtn}>
+                    Risk Survey
+                  </button>
+                </div>
               </div>
             </div>
 
             <div className={styles.risk__backgroundImage}>
               <div className={styles.risk__yellowbg}>
-                <p>This is MTN</p>
+                <div className={styles.risk__content}>
+                  <img src={require("../assets/logo.png")} alt="logo" />
+                  <h2>Welcome to</h2>
+                  <br></br>
+                  <span>
+                    The Insurance Risk Management <br />
+                    Portal
+                  </span>
+                  <button className={styles.risk__SliderBtn}>
+                    Risk Survey
+                  </button>
+                </div>
               </div>
             </div>
 
             <div className={styles.risk__backgroundImage3}>
               <div className={styles.risk__yellowbg}>
-                <p>This is MTN</p>
+                <div className={styles.risk__content}>
+                  <img src={require("../assets/logo.png")} alt="logo" />
+                  <h2>Welcome to</h2>
+                  <br></br>
+                  <span>
+                    The Insurance Risk Management <br />
+                    Portal
+                  </span>
+
+                  <NextBtn buttonName="Risk Survey" handler={riskHandler} />
+
+                  {/* <button
+                    className={styles.risk__SliderBtn}
+                    onClick={riskHandler}
+                  >
+                    Risk Survey
+                  </button> */}
+                </div>
               </div>
             </div>
           </Slider>
