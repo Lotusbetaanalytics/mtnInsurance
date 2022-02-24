@@ -15,4 +15,5 @@
   "localizedResources": {
     "MtninsuranceWebPartStrings": "lib/webparts/mtninsurance/loc/{locale}.js"
   }
+    
 }

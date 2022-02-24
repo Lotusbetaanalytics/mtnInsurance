@@ -1,10 +1,11 @@
 import * as React from 'react';
+
 import styles from './Mtninsurance.module.scss';
 import { IMtninsuranceProps } from './IMtninsuranceProps';
 import { escape } from '@microsoft/sp-lodash-subset';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import * as jQuery from 'jquery';
-import { Input,NextBtn, PrevBtn, Select, SideBar, Slider } from './container';
+import { BackgroundSlide, Carousel, Input,NextBtn, PrevBtn, Select, SideBar, Slider } from './container';
 import { ClaimOne} from './screens';
 import ClaimPageThree from './screens/Claim/claimPagethree'
 import ClaimPageTwo from './screens/Claim/claimPageTwo';
@@ -47,9 +48,14 @@ export default class Mtninsurance extends React.Component<IMtninsuranceProps, {}
             <Route path="/newclaimbulktwo" exact component={NewClaimBulkTwo} />
             <Route path="/newclaimbulkthree" exact component={NewClaimBulkThree} />
             <Route path="/brokerpageone" exact component={BrokerPageOne} />
+            <Route path="/background" exact component={BackgroundSlide} />
+            <Route path="/carousel" exact component={Carousel} />
+            
+            
           </Switch>
         </HashRouter>
       </>
     );
+    
   }
 }

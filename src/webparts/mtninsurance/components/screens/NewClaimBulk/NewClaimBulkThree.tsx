@@ -16,6 +16,9 @@ const downloadHandler = () => {
 const nextHandler = () => {
     // history.push("/workHabit")
 }
+const ExceluploadFile = () => {
+  // history.push("/workHabit")
+}
   return (
     <div className={styles.container}>
         <SideBar/>
@@ -26,7 +29,10 @@ const nextHandler = () => {
                 <div className={styles.marginBtm}><CustomBtn buttonName="Download SpreadSheet" handler={downloadHandler}  /></div> 
             </div>
             <div className={styles.imageContainer}>
-              gffyufyyuf
+            <div className={styles.imgBox}>
+            <img src={require('../../assets/Vectorexcel.png')} alt="" />
+            </div>
+                <CustomBtn buttonName="Add more file for Upload" handler={ExceluploadFile}  />
             </div>
             <div className={styles.btnContainer}>
                 <PrevBtn buttonName="Previous" handler={cancelHandler}/>

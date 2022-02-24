@@ -1,5 +1,5 @@
 import *as React from 'react'
-import { Input, NextBtn, PrevBtn, SideBar, Slider } from '../../container'
+import { Input, Modal, NextBtn, PrevBtn, SideBar, Slider } from '../../container'
 import { useHistory } from 'react-router-dom'
 import styles from "./claim.module.scss"
 const ClaimOne = () => {
@@ -15,9 +15,7 @@ const ClaimOne = () => {
   const [assetId,setAssetId] = React.useState("")
   const [estimatedLost,setEstimatedLost] = React.useState("")
 
-  const cancelHandler = () => {
-     
-}
+  const [isOpen, setIsOpen] = React.useState(false);
 
 const nextHandler = () => {
   history.push("/claimpagetwo")
@@ -101,7 +99,8 @@ const nextHandler = () => {
               </div>
             </div>
             <div className={styles.btnContainer}>
-                <PrevBtn buttonName="Cancel" handler={cancelHandler}/> <NextBtn buttonName="Next" handler={nextHandler}/>
+                <PrevBtn buttonName="Cancel" handler={() => setIsOpen(true)}/> <NextBtn buttonName="Next" handler={nextHandler}/>
+                {isOpen && <Modal setIsOpen={setIsOpen} />}
               </div>
         </div>
     </div>

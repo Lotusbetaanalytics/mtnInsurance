@@ -48,10 +48,25 @@
 }
 .imageContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  background-color: black;
   height: 300px;
+}
+.imgBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background-color: #c4c4c44f;
+  margin-bottom: 40px;
+}
+.uploadInput {
+  width: 50px;
+  background-color: green;
 }
 .checkContainer {
   display: flex;
