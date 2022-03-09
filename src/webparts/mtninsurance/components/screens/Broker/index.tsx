@@ -2,7 +2,9 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import { Header, Input, Navigation, Select, DateInput, OptionHelpers, Textarea, } from '../../containers'
-import { BsChevronLeft, BsChevronRight, BsX } from "react-icons/bs";
+import { BsChevronLeft, BsFillCheckCircleFill, BsX } from "react-icons/bs";
+import { default as pnp, ItemAddResult } from "sp-pnp-js";
+import swal from 'sweetalert'
 
 const Broker = ({ history }) => {
 
@@ -22,11 +24,40 @@ const Broker = ({ history }) => {
 
     // Button Actions
     const prevHandler = () => {
-        history.push("/")
+        history.push("/dashboard")
     }
 
     const nextHandler = () => {
-        history.push("/newvendor/screen/2")
+        try {
+            pnp.sp.web.lists.getByTitle("Broker Form Description").items.add({
+
+                Title: initiator,
+                Initiator: initiator,
+                Email: email,
+                Date: date,
+                Task: task,
+                DateAssigned: dateAssigned,
+                ResponsibleStakeholder: responsibleStakeholderEmail,
+                Expected_Closure: expectedClosureDate,
+                Actual_Closure: actualClosureDate,
+
+
+
+            }).then((iar: ItemAddResult) => {
+                swal("Success", "Success", "success");
+                setTimeout(function () {
+                    history.push(`/dashboard`);
+
+                }, 2000);
+            }).catch((e) => {
+                swal("Warning!", "An Error Occured", "error");
+                console.error(e.message);
+            });
+
+        } catch (e) {
+            swal("Warning!", e, "error");
+            console.error(e);
+        }
     }
 
 
@@ -98,8 +129,8 @@ const Broker = ({ history }) => {
 
                         </div>
                         <div className='mtn__btnContainer'>
-                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}>Cancel <BsX /></button></div>
-                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight /></button></div>
+                            <div> <button className='mtn__btn mtn__black' type='button' onClick={prevHandler}><BsX className='mtn__btnIconsR' />Cancel </button></div>
+                            <div> <button className='mtn__btn mtn__yellow' type='button' onClick={nextHandler}>Submit <BsFillCheckCircleFill className='mtn__btnIconsL' /></button></div>
                         </div>
                     </>
                     {/* End of Form 1 */}

@@ -2,13 +2,15 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import { Header, Input, Navigation, Slider, Select, DateInput, OptionHelpers, Textarea, Radio } from '../../containers'
-import { BsChevronLeft, BsChevronRight, BsX } from "react-icons/bs";
+import { BsChevronLeft, BsFillCheckCircleFill, BsX } from "react-icons/bs";
+import { default as pnp, ItemAddResult } from "sp-pnp-js";
+import swal from 'sweetalert'
 
 const ClaimScreenThree = ({ history }) => {
 
     // User Data from Storage
     const data = JSON.parse(localStorage.getItem("data"))
-
+    const formData = JSON.parse(localStorage.getItem("formData"))
 
     const [workingDays, setWorkingDays] = useState("")
     const [policeReport, setPoliceReport] = useState("")
@@ -32,7 +34,64 @@ const ClaimScreenThree = ({ history }) => {
     }
 
     const nextHandler = () => {
-        history.push("/newclaim/screen/3")
+
+        try {
+
+            // get a list that doesn't exist
+            pnp.sp.web.lists.getByTitle("ClaimEntry").items.add({
+                Title: formData.initiator,
+                InitiatorEmail: formData.email,
+                Date: formData.date,
+                DateReported: formData.dateReported,
+                AssetType: formData.assetType,
+                DateOfIncident: formData.incidentDate,
+                PolicyNumber: formData.policyNumber,
+                DateReportedToInsurer: formData.dateReportedToInsurer,
+                PolicyName: formData.policyName,
+                IncidentType: formData.incidentType,
+                AssetID: formData.assetID,
+                EstimatedAmountOfLoss: formData.estimatedAmountLoss,
+                Description: formData.descriptionOfLoss,
+                Deductible: formData.deductible,
+                LiabilityEstimate: formData.liabilityEstimate,
+                NetClaimAmount: formData.netClaimAmount,
+                FinalAdjustedLiabilityAmount: formData.finalAdjustedLiabilityAmount,
+                AmountReceived: formData.amountRecieved,
+                AmountOutstanding: formData.amountOutstanding,
+                Status: formData.status,
+                DateOfFullDocumentation: formData.dateofFullDocumentation,
+                DateofSettlementOfferReceipt: formData.dateofSettlementOfferReciept,
+                DocumentCompleted: formData.documentCompleted,
+                NumberOfWorkingDaysFromFull: formData.workingDays,
+                PoliceReport: policeReport,
+                DateOfVoucherDischargeExecution: dateofVoucherDischargeExecution,
+                ResponsibleStakeholder: responsibleStakeholder,
+                DateoffullSettlement: dateoffullSettlement,
+                Pictures: pictures,
+                NumberOfWorkingDaysFromDischarge: nWorkingDays,
+                Invoice: invoice,
+                IncidentReport: incidentReport,
+                FireServiceReport: fireServiceReport,
+                CourtAffidavit: courtAffidavit,
+                Region: region,
+                NumberOfWorkingDaysOutstanding: numberofWorkingDaysOutstanding,
+                OtherRelevantInformation: otherRelevantInformation
+            }).then((iar: ItemAddResult) => {
+                swal("Success", "Success", "success");
+                setTimeout(function () {
+                    localStorage.removeItem("formData")
+                    history.push(`/dashboard`);
+
+                }, 2000);
+            }).catch((e) => {
+                swal("Warning!", e, "error");
+                console.error(e);
+            });
+
+        } catch (e) {
+            swal("Warning!", e, "error");
+            console.error(e);
+        }
     }
 
 
@@ -101,8 +160,8 @@ const ClaimScreenThree = ({ history }) => {
 
                         </div>
                         <div className='mtn__btnContainer'>
-                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}><BsChevronLeft /> Previous</button></div>
-                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight /></button></div>
+                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}><BsChevronLeft className='mtn__btnIconsR' /> Previous</button></div>
+                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Submit <BsFillCheckCircleFill className='mtn__btnIconsL' /></button></div>
                         </div>
                     </>
 

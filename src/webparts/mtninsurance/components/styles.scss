@@ -45,13 +45,16 @@
   align-items: center;
 }
 
-.mtn__btnIcons {
- justify-content: space-around;
+.mtn__btnIconsL {
+margin-left: 1rem;
 }
+.mtn__btnIconsR {
+  margin-right: 1rem;
+  }
 
 .mtn__btn svg{
-font-size: 25px;
-
+font-size: 15px;
+text-align: right;
 }
 
 .mtn__btnSm {
@@ -102,8 +105,8 @@ font-size: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  flex: 1;
+  justify-content: left;
+  // flex: 1;
 }
 
 .mtn__child {
@@ -116,8 +119,8 @@ font-size: 25px;
 .mtn__InputContainer {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
-  padding: .5rem 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem 2rem;
 
   label {
     font-size: 13px;
@@ -138,7 +141,10 @@ font-size: 25px;
   input:read-only {
     background: whitesmoke
   }
-
+  input:focus {
+    border: 1px solid #FFCC00;
+    outline: 1px solid #FFCC00;
+  }
   select {
     width: 100%;
     height: 3.5rem;
@@ -148,6 +154,15 @@ font-size: 25px;
     border-radius: 100px;
     background: white;
     padding-right: 3rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+  }
+  select:focus {
+    border: 1px solid #FFCC00;
+    outline: 1px solid #FFCC00;
   }
   textarea {
     width: 100%;
@@ -157,6 +172,10 @@ font-size: 25px;
     padding: .5rem 1.5rem;
     border-radius: 10px;
     background: white;
+  }
+  textarea:focus {
+    border: 1px solid #FFCC00;
+    outline: 1px solid #FFCC00;
   }
   span{
     display: flex;
@@ -211,4 +230,5 @@ font-size: 25px;
   flex-direction: row;
   justify-content: left;
   flex-wrap: wrap;
+  gap:2rem
 }

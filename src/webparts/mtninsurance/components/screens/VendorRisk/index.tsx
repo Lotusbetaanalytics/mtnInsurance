@@ -22,20 +22,17 @@ const VendorRisk = ({ history }) => {
     const [insurancePolicies, setInsurancePolicies] = useState("")
     const [sumInsured, setSumInsured] = useState("")
     const [status, setStatus] = useState("")
-    const [datePolicyReceived, setDatePolicyReceived] = useState("")
-    const [datePolicyValidated, setDatePolicyValidated] = useState("")
-    const [InsuranceExpiryDate, setInsuranceExpiryDate] = useState("")
-    const [comments, setComments] = useState("")
-    const [user, setUser] = useState("")
-    const [liaisonPerson, setLiaisonPerson] = useState("")
+
 
 
     // Button Actions
     const prevHandler = () => {
-        history.push("/")
+        history.push("/dashboard")
     }
 
     const nextHandler = () => {
+        const formData = { initiator, email, date, vendor, contractTitle, contractStartDate, contractEndDate, dateContractReceived, dateRecommendationAdvised, insurancePolicies, sumInsured, status }
+        localStorage.setItem("vendorData", JSON.stringify(formData))
         history.push("/newvendor/screen/2")
     }
 
@@ -111,8 +108,8 @@ const VendorRisk = ({ history }) => {
 
                         </div>
                         <div className='mtn__btnContainer'>
-                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}>Cancel <BsX /></button></div>
-                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight /></button></div>
+                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}><BsX className='mtn__btnIconsR' />Cancel </button></div>
+                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight className='mtn__btnIconsL' /></button></div>
                         </div>
                     </>
                     {/* End of Form 1 */}

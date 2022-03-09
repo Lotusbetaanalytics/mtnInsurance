@@ -4,10 +4,11 @@ import { Link } from "react-router-dom"
 import { Header, Input, Navigation, Slider, Select, DateInput, OptionHelpers, Textarea, Radio } from '../../containers'
 import { BsChevronLeft, BsChevronRight, BsX } from "react-icons/bs";
 
+
 const ClaimScreenTwo = ({ history }) => {
 
     // User Data from Storage
-    const data = JSON.parse(localStorage.getItem("data"))
+    const data = JSON.parse(localStorage.getItem("formData"))
 
     const [descriptionOfLoss, setDescriptionOfLoss] = useState("")
     const [deductible, setDeductible] = useState("")
@@ -19,7 +20,7 @@ const ClaimScreenTwo = ({ history }) => {
     const [status, setStatus] = useState("")
     const [dateofFullDocumentation, setDateofFullDocumentation] = useState("")
     const [dateofSettlementOfferReciept, setDateofSettlementOfferReciept] = useState("")
-    const [documentCompleted, setDocumentCompleted] = useState("")
+    const [documentCompleted, setDocumentCompleted] = useState("No")
 
 
     // Button Actions
@@ -27,7 +28,11 @@ const ClaimScreenTwo = ({ history }) => {
         history.push("/newclaim")
     }
 
-    const nextHandler = () => {
+    const nextHandler = (e) => {
+        e.preventDefault()
+        const formData = { descriptionOfLoss, deductible, liabilityEstimate, netClaimAmount, finalAdjustedLiabilityAmount, amountRecieved, amountOutstanding, status, dateofFullDocumentation, dateofSettlementOfferReciept, documentCompleted }
+        const info = { ...data, ...formData }
+        localStorage.setItem("formData", JSON.stringify(info))
         history.push("/newclaim/screen/3")
     }
 
@@ -45,7 +50,9 @@ const ClaimScreenTwo = ({ history }) => {
                         <div className='mtn__InputFlex'>
                             <Textarea title="Description Of Loss"
                                 value={descriptionOfLoss}
-                                onChange={(e) => setDescriptionOfLoss(e.target.value)} />
+                                onChange={(e) => setDescriptionOfLoss(e.target.value)}
+                                required={true}
+                            />
 
                             <Input
                                 title="Deductible"
@@ -108,8 +115,8 @@ const ClaimScreenTwo = ({ history }) => {
 
                         </div>
                         <div className='mtn__btnContainer'>
-                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}>Previous <BsChevronLeft /></button></div>
-                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight /></button></div>
+                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}><BsChevronLeft className='mtn__btnIconsR' />Previous </button></div>
+                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight className='mtn__btnIconsL' /></button></div>
                         </div>
                     </>
 

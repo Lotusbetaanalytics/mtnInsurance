@@ -45,7 +45,7 @@ export default class Mtninsurance extends React.Component<IMtninsuranceProps, {}
   private _userProfile(): void {
     pnp.sp.profiles.myProperties.get()
       .then((response) => {
-
+        console.log(response)
         // this.setState({ Name: response.DisplayName, Email: response.Email, DP: response.PictureUrl });
         localStorage.setItem('data', JSON.stringify(response));
         // localStorage.setItem('Email', response.Email);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 
-const Input = ({ onChange, value, type, title, readOnly = false, }) => {
+const Input = ({ onChange, value, type, title, readOnly = false, required = false, }) => {
     return <div className="mtn__InputContainer mtn__child">
         <input
             type={type}
@@ -9,6 +9,7 @@ const Input = ({ onChange, value, type, title, readOnly = false, }) => {
             value={value}
             placeholder={title}
             readOnly={readOnly}
+            required={required}
         />
     </div>;
 };

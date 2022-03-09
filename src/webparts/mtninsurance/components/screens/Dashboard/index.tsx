@@ -11,9 +11,38 @@ import {
     BsFileEarmarkMedical,
     BsFileCodeFill,
 } from "react-icons/bs";
-
+import { default as pnp } from "sp-pnp-js";
 
 const HomeScreen = () => {
+
+    const [claimEntry, setClaimEntry] = React.useState(0)
+    const [policy, setPolicy] = React.useState(0)
+    const [vendor, setVendor] = React.useState(0)
+    const [risk, setRisk] = React.useState(0)
+    const [external, setExternal] = React.useState(0)
+
+    React.useEffect(() => {
+        pnp.sp.web.lists.getByTitle(`ClaimEntry`).items.get().then
+            ((response) => {
+                setClaimEntry(response.length)
+            })
+        pnp.sp.web.lists.getByTitle(`Policy Entry`).items.get().then
+            ((response) => {
+                setPolicy(response.length)
+            })
+        pnp.sp.web.lists.getByTitle(`Vendor Form Description`).items.get().then
+            ((response) => {
+                setVendor(response.length)
+            })
+        pnp.sp.web.lists.getByTitle(`Risk Survey Form Description`).items.get().then
+            ((response) => {
+                setRisk(response.length)
+            })
+        pnp.sp.web.lists.getByTitle(`Broker Form Description`).items.get().then
+            ((response) => {
+                setExternal(response.length)
+            })
+    }, [])
     return (
         <div className="appContainer">
             <Navigation />
@@ -22,37 +51,33 @@ const HomeScreen = () => {
                 <div className='cardContainer'>
                     <Card
                         title="Claim"
-                        count="10"
+                        count={claimEntry}
                         Icon={BsCollection}
-                        color={styles.yellow}
                         url="/newClaim"
                     />
                     <Card
                         title="Policy"
-                        count="10"
+                        count={policy}
                         Icon={BsFileCheckFill}
-                        color={styles.yellow}
                         url="/newClaim"
                     />
                     <Card
                         title="Vendor"
-                        count="10"
+                        count={vendor}
                         Icon={BsAwardFill}
-                        color={styles.yellow}
+
                         url="/newClaim"
                     />
                     <Card
                         title="Risk Survey"
-                        count="10"
+                        count={risk}
                         Icon={BsFileEarmarkMedical}
-                        color={styles.yellow}
                         url="/newClaim"
                     />
                     <Card
                         title="External Stakeholders"
-                        count="10"
+                        count={external}
                         Icon={BsFileCodeFill}
-                        color={styles.yellow}
                         url="/newClaim"
                     />
                 </div>

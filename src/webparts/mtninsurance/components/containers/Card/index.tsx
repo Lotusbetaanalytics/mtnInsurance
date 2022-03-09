@@ -2,12 +2,12 @@ import * as React from 'react'
 import styles from './styles.module.scss'
 import { Link } from 'react-router-dom';
 
-const Card = ({ title, count, Icon, color, url }) => {
+const Card = ({ title, count, Icon, url }) => {
     return (
 
         <Link to={url} className={styles.mtn__url}>
             <div className={styles.mtn__cards}>
-                <div className={`${styles.mtn__icons} ${color}`}>
+                <div className={`${styles.mtn__icons}`}>
                     <Icon />
                 </div>
                 <div className={styles.mtn__text}>

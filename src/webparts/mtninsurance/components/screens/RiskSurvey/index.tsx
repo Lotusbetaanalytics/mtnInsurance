@@ -2,7 +2,9 @@ import * as React from 'react'
 import { useState } from 'react'
 import { Link } from "react-router-dom"
 import { Header, Input, Navigation, Select, DateInput, OptionHelpers, Textarea, } from '../../containers'
-import { BsChevronLeft, BsChevronRight, BsX } from "react-icons/bs";
+import { BsFillCheckCircleFill, BsX } from "react-icons/bs";
+import { default as pnp, ItemAddResult } from "sp-pnp-js";
+import swal from 'sweetalert'
 
 const RiskSurvey = ({ history }) => {
 
@@ -32,7 +34,42 @@ const RiskSurvey = ({ history }) => {
     }
 
     const nextHandler = () => {
-        history.push("/newvendor/screen/2")
+
+        try {
+            pnp.sp.web.lists.getByTitle("Risk Survey Form Description").items.add({
+
+                Title: initiator,
+
+                InitiatorEmail: email,
+                Date: date,
+                SurveyType: surveyType,
+                RiskLocation: riskLocation,
+                RiskElement: riskElement,
+                Description: description,
+                DateRecommendation: dateRecommended,
+                Status: status,
+                DateClosed: dateClosed,
+                Assignee: assignee,
+                AssigneesEmail: assigneesEmail,
+                AssigneeUnit: assigneeUnit,
+                UnitGroupEmail: assigneeUnit,
+
+
+            }).then((iar: ItemAddResult) => {
+                swal("Success", "Success", "success");
+                setTimeout(function () {
+                    history.push(`/dashboard`);
+
+                }, 2000);
+            }).catch((e) => {
+                swal("Warning!", "An Error Occured", "error");
+                console.error(e.message);
+            });
+
+        } catch (e) {
+            swal("Warning!", e, "error");
+            console.error(e);
+        }
     }
 
 
@@ -104,8 +141,8 @@ const RiskSurvey = ({ history }) => {
 
                         </div>
                         <div className='mtn__btnContainer'>
-                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}>Cancel <BsX /></button></div>
-                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight /></button></div>
+                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}><BsX className='mtn__btnIconsR' />Cancel </button></div>
+                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Submit <BsFillCheckCircleFill className='mtn__btnIconsL' /></button></div>
                         </div>
                     </>
                     {/* End of Form 1 */}

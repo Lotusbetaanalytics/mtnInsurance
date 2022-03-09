@@ -29,6 +29,8 @@ const PolicyScreen = ({ history }) => {
     }
 
     const nextHandler = () => {
+        const formData = { initiator, email, date, insured, policyNumber, policyName, policyDescription, policyType, policyStartDate, policyExpiryDate, currency }
+        localStorage.setItem("policyData", JSON.stringify(formData))
         history.push("/newpolicy/screen/2")
     }
 
@@ -99,8 +101,8 @@ const PolicyScreen = ({ history }) => {
 
                         </div>
                         <div className='mtn__btnContainer'>
-                            <div> <button className='mtn__btn mtn__black mtn__btnIcons' type='button' onClick={prevHandler}>Cancel <BsX /></button></div>
-                            <div> <button className='mtn__btn mtn__yellow mtn__btnIcons' type='button' onClick={nextHandler}>Next <BsChevronRight /></button></div>
+                            <div> <button className='mtn__btn mtn__black' type='button' onClick={prevHandler}><BsX />Cancel </button></div>
+                            <div> <button className='mtn__btn mtn__yellow' type='button' onClick={nextHandler}>Next <BsChevronRight className='mtn__btnIconsL' /></button></div>
                         </div>
                     </>
                     {/* End of Form 1 */}

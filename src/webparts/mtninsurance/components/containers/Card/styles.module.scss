@@ -15,6 +15,7 @@
 }
 
 .mtn__icons {
+    background: rgba(255, 196, 35, 1);
     color: black;
     display: flex;
     flex-direction: row;
@@ -35,4 +36,8 @@
     display: flex;
     flex-direction: column;
     flex: 0.8;
+}
+.yellow{
+    background: rgba(255, 196, 35, 1);
+    color: black;
 }
